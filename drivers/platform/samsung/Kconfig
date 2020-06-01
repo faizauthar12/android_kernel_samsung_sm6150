@@ -1,0 +1,30 @@
+# Samsung configuration options
+
+config MACH_SAMSUNG
+	bool "Samsung device"
+	depends on ARCH_QCOM
+	help
+	  Support for Samsung products
+
+config MACH_SAMSUNG_SM7150
+	bool "SAMSUNG SM7150 SDMMAGPIE"
+	depends on MACH_SAMSUNG
+	depends on ARCH_SM6150
+	depends on ARCH_SDMMAGPIE
+	help
+	  Support for SM7150 SDMMAGPIE Samsung variants
+
+menu "Samsung board selection"
+
+	config MACH_SAMSUNG_A71
+		bool "SAMSUNG_A71_BOARD"
+		depends on MACH_SAMSUNG_SM7150
+		help
+		  Support for Samsung A71 variant
+
+	config MACH_SAMSUNG_A80
+		bool "SAMSUNG_A80_BOARD"
+		depends on MACH_SAMSUNG_SM7150
+		help
+		  Support for Samsung A80 variant
+endmenu
